@@ -10,7 +10,7 @@ export const projects: Project[] = [
     technologies: ["React Native", "FastAPI", "AWS", "PostgreSQL", "AI/ML"],
     links: {
       live: "https://www.joinlinqapp.com",
-      demo: "https://www.joinlinqapp.com/app",
+      app: "https://www.joinlinqapp.com/app",
     },
     featured: true,
   },
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     technologies: ["React Native", "App Store"],
     links: {
       live: "https://doomscrollr.vercel.app",
-      demo: "https://doomscrollr.vercel.app/scrollbuddy",
+      app: "https://doomscrollr.vercel.app/scrollbuddy",
     },
     featured: true,
   },

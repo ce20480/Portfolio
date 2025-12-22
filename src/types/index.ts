@@ -46,6 +46,7 @@ export interface Project {
     live?: string;
     github?: string;
     demo?: string;
+    app?: string;
   };
   award?: string;
   featured: boolean;

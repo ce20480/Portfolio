@@ -54,6 +54,19 @@
   letter-spacing: var(--tracking-wide);
 }
 
+.awardLink {
+  text-decoration: none;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.awardLink:hover {
+  transform: scale(1.05);
+}
+
+.awardLink:hover .award {
+  background: var(--color-accent-hover);
+}
+
 .projectTagline {
   font-size: var(--text-sm);
   color: var(--color-text-muted);

@@ -16,7 +16,19 @@ export function ProjectItem({ project, staggerIndex }: ProjectItemProps) {
         <div className={styles.projectTitleRow}>
           <h4 className={styles.projectTitle}>{project.title}</h4>
           {project.award && (
-            <span className={styles.award}>{project.award}</span>
+            project.links.proof ? (
+              <a
+                href={project.links.proof}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.awardLink}
+                aria-label={`View proof for ${project.award}`}
+              >
+                <span className={styles.award}>{project.award}</span>
+              </a>
+            ) : (
+              <span className={styles.award}>{project.award}</span>
+            )
           )}
         </div>
         <p className={styles.projectTagline}>{project.tagline}</p>
@@ -81,6 +93,19 @@ export function ProjectItem({ project, staggerIndex }: ProjectItemProps) {
             <span>Code</span>
           </a>
         )}
+        {project.links.tiktok && project.links.tiktok.map((url, index) => (
+          <a
+            key={url}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.projectLink}
+            aria-label={`View ${project.title} TikTok ${index + 1}`}
+          >
+            <TikTokIcon />
+            <span>TikTok</span>
+          </a>
+        ))}
       </div>
     </div>
   );
@@ -117,6 +142,14 @@ function AppIcon() {
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
       <line x1="12" y1="18" x2="12" y2="18" />
+    </svg>
+  );
+}
+
+function TikTokIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
     </svg>
   );
 }

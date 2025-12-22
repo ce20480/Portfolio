@@ -47,6 +47,8 @@ export interface Project {
     github?: string;
     demo?: string;
     app?: string;
+    tiktok?: string[];
+    proof?: string;
   };
   award?: string;
   featured: boolean;

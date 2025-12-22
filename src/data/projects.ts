@@ -19,11 +19,15 @@ export const projects: Project[] = [
     title: "ScrollBuddy",
     tagline: "Break Free from the Feed",
     description:
-      "Anti-doomscrolling app with accountability partner system. Live on the App Store. Partner controls app access instead of relying on willpower.",
+      "Anti-doomscrolling app with accountability partner system. Live on the App Store. 2M+ pre-launch views on TikTok. Partner controls app access instead of relying on willpower.",
     technologies: ["React Native", "App Store"],
     links: {
       live: "https://doomscrollr.vercel.app",
       app: "https://doomscrollr.vercel.app/scrollbuddy",
+      tiktok: [
+        "https://www.tiktok.com/@doomscrollrs",
+        "https://www.tiktok.com/@theonewhoneverquit",
+      ],
     },
     featured: true,
   },
@@ -36,6 +40,7 @@ export const projects: Project[] = [
     technologies: ["Python", "CNN", "Web3", "Filecoin", "Lilypad"],
     links: {
       demo: "https://youtu.be/_Gkln8kPmD0",
+      proof: "https://www.encodeclub.com/programmes/ai-blueprints-with-filecoin",
     },
     award: "$2.5K Hackathon Winner",
     featured: true,

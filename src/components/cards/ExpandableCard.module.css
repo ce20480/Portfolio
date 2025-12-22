@@ -1,0 +1,107 @@
+/* ===== BASE EXPANDABLE CARD ===== */
+.card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.card[data-expanded="true"] {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Header - Always visible, clickable */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition-fast);
+}
+
+.cardHeader:hover {
+  background: var(--color-bg-alt);
+}
+
+.cardHeader:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.expandIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+  transition: transform var(--transition-base);
+}
+
+.expandIcon[data-expanded="true"] {
+  transform: rotate(180deg);
+}
+
+/* Collapsed Preview Section */
+.collapsedPreview {
+  padding: 0 var(--space-xl) var(--space-lg);
+}
+
+/* ===== EXPAND/COLLAPSE ANIMATION ===== */
+.expandableContent {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-slow);
+}
+
+.expandableContent[data-expanded="true"] {
+  grid-template-rows: 1fr;
+}
+
+.expandableInner {
+  overflow: hidden;
+}
+
+.expandedContent {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+  border-top: 1px solid var(--color-border-light);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity var(--transition-base) 50ms,
+    transform var(--transition-base) 50ms;
+}
+
+.expandableContent[data-expanded="true"] .expandedContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .cardHeader {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .collapsedPreview {
+    padding: 0 var(--space-lg) var(--space-md);
+  }
+
+  .expandedContent {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+  }
+}

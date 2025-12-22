@@ -12,14 +12,6 @@ export function HeroContent() {
       <p className={styles.subtitle}>
         Building products end-to-end — from React Native to AWS infrastructure.
       </p>
-      <div className={styles.ctas}>
-        <a href="#projects" className={styles.btnPrimary}>
-          View Projects
-        </a>
-        <a href="#contact" className={styles.btnSecondary}>
-          Get in Touch
-        </a>
-      </div>
     </div>
   );
 }

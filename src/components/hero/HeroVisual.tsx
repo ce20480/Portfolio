@@ -39,8 +39,9 @@ export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps
             {"  "}
             <span className={styles.property}>skills</span>: [
             <span className={styles.string}>&quot;React&quot;</span>,{" "}
-            <span className={styles.string}>&quot;TS&quot;</span>,{" "}
-            <span className={styles.string}>&quot;Cloud&quot;</span>],
+            <span className={styles.string}>&quot;Python&quot;</span>,{" "}
+            <span className={styles.string}>&quot;AWS&quot;</span>,{" "}
+            <span className={styles.string}>&quot;ML&quot;</span>],
             <br />
             {"}"};
           </code>

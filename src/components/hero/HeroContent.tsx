@@ -8,10 +8,9 @@ export function HeroContent() {
         <br />
         VINOD
       </h1>
+      <p className={styles.role}>Founder & Engineer</p>
       <p className={styles.subtitle}>
-        Full-Stack Developer crafting modern web experiences.
-        <br />
-        Building with React, TypeScript, and cloud technologies.
+        Building products end-to-end — from React Native to AWS infrastructure.
       </p>
       <div className={styles.ctas}>
         <a href="#projects" className={styles.btnPrimary}>

@@ -6,9 +6,10 @@ import styles from "./Hero.module.css";
 
 interface HeroVisualProps {
   onOpenBackground: () => void;
+  onOpenProjects: () => void;
 }
 
-export function HeroVisual({ onOpenBackground }: HeroVisualProps) {
+export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps) {
   return (
     <div className={styles.visual}>
       {/* Terminal/Code mockup */}
@@ -33,7 +34,7 @@ export function HeroVisual({ onOpenBackground }: HeroVisualProps) {
             <br />
             {"  "}
             <span className={styles.property}>role</span>:{" "}
-            <span className={styles.string}>&quot;Full-Stack Developer&quot;</span>,
+            <span className={styles.string}>&quot;Founder & Engineer&quot;</span>,
             <br />
             {"  "}
             <span className={styles.property}>skills</span>: [
@@ -52,6 +53,11 @@ export function HeroVisual({ onOpenBackground }: HeroVisualProps) {
           title="Background"
           subtitle="MEng First Class · CTO"
           onClick={onOpenBackground}
+        />
+        <CompactCard
+          title="Projects"
+          subtitle="4 Projects · $2.5K Winner"
+          onClick={onOpenProjects}
         />
         <div className={styles.socialLinksCompact}>
           {socialLinks.slice(0, 4).map((link) => (

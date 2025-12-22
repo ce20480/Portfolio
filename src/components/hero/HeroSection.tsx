@@ -6,11 +6,14 @@ import { HeroVisual } from "./HeroVisual";
 import { HandDrawnLines } from "./HandDrawnLines";
 import { Modal } from "@/components/modal";
 import { Timeline } from "@/components/cards/BackgroundCard/Timeline";
+import { ProjectsCard } from "@/components/cards/ProjectsCard";
 import { backgroundData } from "@/data/background";
+import { projects } from "@/data/projects";
 import styles from "./Hero.module.css";
 
 export function HeroSection() {
   const [isBackgroundModalOpen, setIsBackgroundModalOpen] = useState(false);
+  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
 
   return (
     <>
@@ -23,7 +26,10 @@ export function HeroSection() {
           <HeroContent />
 
           {/* Right side: Visual/Mockup + Cards */}
-          <HeroVisual onOpenBackground={() => setIsBackgroundModalOpen(true)} />
+          <HeroVisual
+            onOpenBackground={() => setIsBackgroundModalOpen(true)}
+            onOpenProjects={() => setIsProjectsModalOpen(true)}
+          />
         </div>
       </section>
 
@@ -37,6 +43,15 @@ export function HeroSection() {
           education={backgroundData.education}
           experience={backgroundData.experience}
         />
+      </Modal>
+
+      {/* Projects Modal */}
+      <Modal
+        isOpen={isProjectsModalOpen}
+        onClose={() => setIsProjectsModalOpen(false)}
+        title="PROJECTS"
+      >
+        <ProjectsCard projects={projects} />
       </Modal>
     </>
   );

@@ -416,9 +416,9 @@
     padding: var(--space-lg) 0;
   }
 
-  /* Hide redundant headline on mobile - terminal already has this info */
   .headline {
-    display: none;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    text-align: center;
   }
 
   .role {

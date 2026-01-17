@@ -197,6 +197,11 @@
   color: #c586c0;
 }
 
+.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
 .variable {
   color: #9cdcfe;
 }

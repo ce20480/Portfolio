@@ -1,8 +1,152 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { CompactCard } from "@/components/cards";
 import { socialLinks } from "@/data/socials";
 import styles from "./Hero.module.css";
+
+interface CodeSnippet {
+  filename: string;
+  content: React.ReactNode;
+}
+
+const codeSnippets: CodeSnippet[] = [
+  // Snippet 1: Infinite Builder - TypeScript
+  {
+    filename: "life.tsx",
+    content: (
+      <>
+        <span className={styles.comment}>{"// the eternal loop"}</span>
+        <br />
+        <span className={styles.keyword}>while</span> (
+        <span className={styles.keyword}>true</span>) {"{"}
+        <br />
+        {"  "}
+        <span className={styles.variable}>idea</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>build</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>ship</span>();
+        <br />
+        {"}"}
+      </>
+    ),
+  },
+  // Snippet 1: Infinite Builder - Python
+  {
+    filename: "life.py",
+    content: (
+      <>
+        <span className={styles.comment}>{"# the eternal loop"}</span>
+        <br />
+        <span className={styles.keyword}>while</span>{" "}
+        <span className={styles.keyword}>True</span>:
+        <br />
+        {"    "}
+        <span className={styles.variable}>idea</span>()
+        <br />
+        {"    "}
+        <span className={styles.variable}>build</span>()
+        <br />
+        {"    "}
+        <span className={styles.variable}>ship</span>()
+      </>
+    ),
+  },
+  // Snippet 1: Infinite Builder - C++
+  {
+    filename: "life.cpp",
+    content: (
+      <>
+        <span className={styles.comment}>{"// the eternal loop"}</span>
+        <br />
+        <span className={styles.keyword}>while</span> (
+        <span className={styles.keyword}>true</span>) {"{"}
+        <br />
+        {"  "}
+        <span className={styles.variable}>idea</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>build</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>ship</span>();
+        <br />
+        {"}"}
+      </>
+    ),
+  },
+  // Snippet 2: Pure Determination - TypeScript
+  {
+    filename: "grind.tsx",
+    content: (
+      <>
+        <span className={styles.comment}>{"// no coffee needed"}</span>
+        <br />
+        <span className={styles.keyword}>while</span> (!
+        <span className={styles.variable}>caffeinated</span>) {"{"}
+        <br />
+        {"  "}
+        <span className={styles.variable}>build</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>ship</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>repeat</span>();
+        <br />
+        {"}"}
+      </>
+    ),
+  },
+  // Snippet 2: Pure Determination - Python
+  {
+    filename: "grind.py",
+    content: (
+      <>
+        <span className={styles.comment}>{"# no coffee needed"}</span>
+        <br />
+        <span className={styles.keyword}>while</span>{" "}
+        <span className={styles.keyword}>not</span>{" "}
+        <span className={styles.variable}>caffeinated</span>:
+        <br />
+        {"    "}
+        <span className={styles.variable}>build</span>()
+        <br />
+        {"    "}
+        <span className={styles.variable}>ship</span>()
+        <br />
+        {"    "}
+        <span className={styles.variable}>repeat</span>()
+      </>
+    ),
+  },
+  // Snippet 2: Pure Determination - C++
+  {
+    filename: "grind.cpp",
+    content: (
+      <>
+        <span className={styles.comment}>{"// no coffee needed"}</span>
+        <br />
+        <span className={styles.keyword}>while</span> (!
+        <span className={styles.variable}>caffeinated</span>) {"{"}
+        <br />
+        {"  "}
+        <span className={styles.variable}>build</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>ship</span>();
+        <br />
+        {"  "}
+        <span className={styles.variable}>repeat</span>();
+        <br />
+        {"}"}
+      </>
+    ),
+  },
+];
 
 interface HeroVisualProps {
   onOpenBackground: () => void;
@@ -10,6 +154,13 @@ interface HeroVisualProps {
 }
 
 export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps) {
+  const [snippet, setSnippet] = useState<CodeSnippet>(codeSnippets[0]);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * codeSnippets.length);
+    setSnippet(codeSnippets[randomIndex]);
+  }, []);
+
   return (
     <div className={styles.visual}>
       {/* Terminal/Code mockup */}
@@ -20,29 +171,10 @@ export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps
             <span className={styles.dot} data-color="yellow" />
             <span className={styles.dot} data-color="green" />
           </div>
-          <span className={styles.terminalTitle}>portfolio.tsx</span>
+          <span className={styles.terminalTitle}>{snippet.filename}</span>
         </div>
         <div className={styles.terminalBody}>
-          <code className={styles.code}>
-            <span className={styles.keyword}>await</span>{" "}
-            <span className={styles.variable}>build</span>({"{"}
-            <br />
-            {"  "}
-            <span className={styles.property}>founder</span>:{" "}
-            <span className={styles.string}>&quot;Aaron Vinod&quot;</span>,
-            <br />
-            {"  "}
-            <span className={styles.property}>shipped</span>: [
-            <span className={styles.string}>&quot;LINQ&quot;</span>,{" "}
-            <span className={styles.string}>&quot;ScrollBuddy&quot;</span>],
-            <br />
-            {"  "}
-            <span className={styles.property}>using</span>: [
-            <span className={styles.string}>&quot;React Native&quot;</span>,{" "}
-            <span className={styles.string}>&quot;AWS&quot;</span>],
-            <br />
-            {"}"});
-          </code>
+          <code className={styles.code}>{snippet.content}</code>
         </div>
       </div>
 

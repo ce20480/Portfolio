@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Mono, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -64,6 +65,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );

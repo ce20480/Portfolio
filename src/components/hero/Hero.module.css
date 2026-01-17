@@ -178,6 +178,29 @@
   color: #808080;
 }
 
+.shuffleButton {
+  margin-left: auto;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  color: #808080;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.shuffleButton:hover {
+  color: #d4d4d4;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.shuffleButton:active {
+  transform: scale(0.9);
+}
+
 .terminalBody {
   padding: var(--space-lg);
   overflow-x: auto;

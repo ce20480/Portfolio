@@ -24,26 +24,24 @@ export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps
         </div>
         <div className={styles.terminalBody}>
           <code className={styles.code}>
-            <span className={styles.keyword}>const</span>{" "}
-            <span className={styles.variable}>developer</span>{" "}
-            <span className={styles.operator}>=</span> {"{"}
+            <span className={styles.keyword}>await</span>{" "}
+            <span className={styles.variable}>build</span>({"{"}
             <br />
             {"  "}
-            <span className={styles.property}>name</span>:{" "}
+            <span className={styles.property}>founder</span>:{" "}
             <span className={styles.string}>&quot;Aaron Vinod&quot;</span>,
             <br />
             {"  "}
-            <span className={styles.property}>role</span>:{" "}
-            <span className={styles.string}>&quot;Founder & Engineer&quot;</span>,
+            <span className={styles.property}>shipped</span>: [
+            <span className={styles.string}>&quot;LINQ&quot;</span>,{" "}
+            <span className={styles.string}>&quot;ScrollBuddy&quot;</span>],
             <br />
             {"  "}
-            <span className={styles.property}>skills</span>: [
-            <span className={styles.string}>&quot;React&quot;</span>,{" "}
-            <span className={styles.string}>&quot;Python&quot;</span>,{" "}
-            <span className={styles.string}>&quot;AWS&quot;</span>,{" "}
-            <span className={styles.string}>&quot;ML&quot;</span>],
+            <span className={styles.property}>using</span>: [
+            <span className={styles.string}>&quot;React Native&quot;</span>,{" "}
+            <span className={styles.string}>&quot;AWS&quot;</span>],
             <br />
-            {"}"};
+            {"}"});
           </code>
         </div>
       </div>

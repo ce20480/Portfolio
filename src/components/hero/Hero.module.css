@@ -49,11 +49,12 @@
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .role {
+  display: none; /* Role shown in terminal - avoid duplication */
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-accent);
@@ -180,6 +181,7 @@
 .terminalBody {
   padding: var(--space-lg);
   overflow-x: auto;
+  text-align: left;
 }
 
 .code {
@@ -188,6 +190,7 @@
   line-height: 1.6;
   color: #d4d4d4;
   white-space: pre;
+  text-align: left;
 }
 
 .keyword {
@@ -385,12 +388,18 @@
     padding: var(--space-lg) 0;
   }
 
+  /* Hide redundant headline on mobile - terminal already has this info */
   .headline {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    display: none;
+  }
+
+  .role {
+    display: none;
   }
 
   .subtitle {
     font-size: var(--text-base);
+    text-align: center;
   }
 
   .ctas {
@@ -414,8 +423,12 @@
   }
 
   .cardsGrid {
-    flex-direction: column;
+    grid-template-columns: 1fr; /* Stack cards vertically */
     max-width: 100%;
+  }
+
+  .cardsGrid > *:last-child {
+    grid-column: span 1; /* Social row only spans 1 column now */
   }
 
   .socialLinksCompact {
@@ -452,10 +465,33 @@
   }
 
   .visual {
-    gap: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .terminal {
+    max-width: calc(100vw - 32px);
+  }
+
+  .terminalHeader {
+    padding: var(--space-xs) var(--space-sm);
   }
 
   .terminalBody {
     padding: var(--space-md);
+  }
+
+  .code {
+    font-size: 10px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .cardsGrid {
+    gap: var(--space-xs);
   }
 }

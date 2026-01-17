@@ -10,7 +10,7 @@ export function HeroContent() {
       </h1>
       <p className={styles.role}>Founder & Engineer</p>
       <p className={styles.subtitle}>
-        Building products end-to-end — from React Native to AWS infrastructure.
+        Building products end-to-end: React Native to AWS infrastructure.
       </p>
     </div>
   );

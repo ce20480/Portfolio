@@ -45,8 +45,8 @@ export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps
             aria-label="Shuffle code snippet"
             title="Shuffle"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-              <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path d="M18 4l3 3-3 3V7h-3.5a5 5 0 0 0-4.24 2.34L9.14 12l1.12 2.66A5 5 0 0 0 14.5 17H18v-3l3 3-3 3v-3h-3.5a7 7 0 0 1-5.94-3.28L6.78 12l1.78-4.72A7 7 0 0 1 14.5 4H18zm-12 0v3H2v2h4v3l3-4-3-4zm0 10v3l-3-4 3-4v3h4v2H6z" />
             </svg>
           </button>
         </div>

@@ -30,7 +30,7 @@ export interface BackgroundData {
 }
 
 export interface SocialLink {
-  platform: "github" | "linkedin" | "twitter" | "youtube";
+  platform: "github" | "linkedin" | "twitter" | "youtube" | "instagram" | "tiktok";
   url: string;
   username: string;
   label: string;

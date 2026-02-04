@@ -25,4 +25,16 @@ export const socialLinks: SocialLink[] = [
     username: "@aviini",
     label: "YouTube",
   },
+  {
+    platform: "instagram",
+    url: "https://www.instagram.com/aviinilimited/",
+    username: "@aviinilimited",
+    label: "Instagram",
+  },
+  {
+    platform: "tiktok",
+    url: "https://www.tiktok.com/@aviinilimited",
+    username: "@aviinilimited",
+    label: "TikTok",
+  },
 ];

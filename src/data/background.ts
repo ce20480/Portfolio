@@ -28,10 +28,10 @@ export const experience: ExperienceEntry[] = [
     company: "LINQ - Professional Networking",
     role: "Chief Technology Officer",
     type: "full-time",
-    dateRange: "Sep 2025 - Present",
+    dateRange: "Sep 2025 - Jan 2026",
     description:
-      "Leading technical strategy for a professional networking platform that uses AI to recommend ideal connections.",
-    isCurrent: true,
+      "Led technical strategy for a professional networking platform that uses AI to recommend ideal connections.",
+    isCurrent: false,
   },
   {
     id: "aviini-founder",
@@ -75,8 +75,8 @@ export const experience: ExperienceEntry[] = [
 ];
 
 export const backgroundData: BackgroundData = {
-  headline: "MEng First Class · CTO · Entrepreneur",
-  subheadline: "Bristol '24 → Aviini Limited → LINQ",
+  headline: "MEng First Class · Founder · Engineer",
+  subheadline: "Bristol '24 → LINQ → ScrollBuddy",
   education,
   experience,
 };

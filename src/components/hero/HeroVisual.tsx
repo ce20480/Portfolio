@@ -58,7 +58,7 @@ export function HeroVisual({ onOpenBackground, onOpenProjects }: HeroVisualProps
       <div className={styles.cardsGrid}>
         <CompactCard
           title="Background"
-          subtitle="MEng First Class · CTO"
+          subtitle="MEng First Class · Founder"
           onClick={onOpenBackground}
         />
         <CompactCard

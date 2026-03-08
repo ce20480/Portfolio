@@ -24,6 +24,17 @@ export const education: EducationEntry[] = [
 
 export const experience: ExperienceEntry[] = [
   {
+    id: "cogram-swe",
+    company: "Cogram Technologies GmbH",
+    role: "Software Engineer",
+    type: "self-employed",
+    dateRange: "Mar 2026 - Present",
+    location: "Remote",
+    description:
+      "Building AI-powered meeting productivity tools as a contractor via Deel.",
+    isCurrent: true,
+  },
+  {
     id: "linq-cto",
     company: "LINQ - Professional Networking",
     role: "Chief Technology Officer",
@@ -38,16 +49,15 @@ export const experience: ExperienceEntry[] = [
     company: "Aviini Limited",
     role: "Business Owner",
     type: "self-employed",
-    dateRange: "Jul 2023 - Present",
+    dateRange: "Jul 2023 - Jan 2025",
     location: "Cambridge, UK",
     description:
       "Co-owner of an e-commerce business selling home decor and clothing across Etsy and eBay.",
     highlights: [
       "£25,000 accumulated profit",
       "25-35% profit margins",
-      "Paused operations Jan 2025",
     ],
-    isCurrent: true,
+    isCurrent: false,
   },
   {
     id: "eye-level-tutor",
@@ -75,8 +85,8 @@ export const experience: ExperienceEntry[] = [
 ];
 
 export const backgroundData: BackgroundData = {
-  headline: "MEng First Class · Founder · Engineer",
-  subheadline: "Bristol '24 → LINQ → ScrollBuddy",
+  headline: "MEng First Class · Engineer · Founder",
+  subheadline: "Bristol '24 → LINQ → Cogram → ScrollBuddy",
   education,
   experience,
 };

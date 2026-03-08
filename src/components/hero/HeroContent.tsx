@@ -8,7 +8,7 @@ export function HeroContent() {
         <br />
         VINOD
       </h1>
-      <p className={styles.role}>Founder & Engineer</p>
+      <p className={styles.role}>Engineer & Founder</p>
       <p className={styles.subtitle}>
         Building products end-to-end: React Native to AWS infrastructure.
       </p>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Plan 2026/27 - Aaron Vinod</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e1e4e8; line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1.8rem; color: #58a6ff; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.3rem; color: #58a6ff; margin: 2rem 0 1rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+    h3 { font-size: 1.1rem; color: #c9d1d9; margin: 1.5rem 0 0.75rem; }
+    .subtitle { color: #8b949e; margin-bottom: 2rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #21262d; }
+    th { color: #8b949e; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { color: #c9d1d9; }
+    .amount { text-align: right; font-family: 'SF Mono', 'Fira Code', monospace; }
+    .total { border-top: 2px solid #30363d; font-weight: 700; }
+    .total td { color: #58a6ff; }
+    .highlight { color: #3fb950; }
+    .warn { color: #d29922; }
+    .negative { color: #f85149; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+    .card-green { border-color: #238636; }
+    .card-yellow { border-color: #9e6a03; }
+    .card-blue { border-color: #1f6feb; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 12px; font-weight: 600; margin-right: 0.25rem; }
+    .tag-green { background: #238636; color: #fff; }
+    .tag-yellow { background: #9e6a03; color: #fff; }
+    .tag-red { background: #da3633; color: #fff; }
+    .tag-blue { background: #1f6feb; color: #fff; }
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .source { font-size: 0.8rem; color: #8b949e; }
+    .source a { color: #8b949e; }
+    .source a:hover { color: #58a6ff; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } body { padding: 1rem; } }
+    .step { display: flex; gap: 1rem; margin: 0.75rem 0; }
+    .step-num { min-width: 2rem; height: 2rem; background: #1f6feb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+    .step-content { flex: 1; }
+    .step-when { font-size: 0.8rem; color: #8b949e; }
+    .callout { background: #1c2128; border-left: 3px solid #d29922; padding: 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .comparison { display: flex; gap: 1rem; }
+    .comparison > div { flex: 1; }
+    hr { border: none; border-top: 1px solid #21262d; margin: 2rem 0; }
+  </style>
+</head>
+<body>
+
+<h1>Financial Plan 2026/27</h1>
+<p class="subtitle">Sole Trader | Cogram Technologies GmbH Contractor via Deel</p>
+
+<!-- ==================== INCOME ==================== -->
+<h2>1. Income</h2>
+<div class="card">
+  <table>
+    <tr><td>Contract (Cogram via Deel)</td><td class="amount">EUR 70,000/year</td></tr>
+    <tr><td>Exchange rate (EUR/GBP, March 2026)</td><td class="amount">0.867</td></tr>
+    <tr class="total"><td>Gross GBP income</td><td class="amount">GBP 60,669/year</td></tr>
+    <tr><td>Monthly gross</td><td class="amount">GBP 5,056/month</td></tr>
+  </table>
+  <p class="source">Rate source: <a href="https://www.exchangerates.org.uk/EUR-GBP-spot-exchange-rates-history-2026.html">exchangerates.org.uk EUR-GBP 2026</a></p>
+</div>
+
+<!-- ==================== EXPENSES ==================== -->
+<h2>2. Allowable Business Expenses</h2>
+<p>Expenses must be incurred <strong>"wholly and exclusively"</strong> for business purposes.
+  <a href="https://www.gov.uk/expenses-if-youre-self-employed" class="source">[GOV.UK: Expenses if self-employed]</a>
+</p>
+
+<h3>What you can claim</h3>
+<table>
+  <thead>
+    <tr><th>Expense</th><th>Deductible?</th><th class="amount">Annual est.</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Home office (simplified flat rate, 101+ hrs/month)</td>
+      <td><span class="tag tag-green">Yes</span></td>
+      <td class="amount">GBP 312</td>
+      <td><a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/working-from-home" class="source">GOV.UK</a></td>
+    </tr>
+    <tr>
+      <td>Software subscriptions (dev tools, hosting, SaaS)</td>
+      <td><span class="tag tag-green">Yes</span></td>
+      <td class="amount">GBP 3,000</td>
+      <td><a href="https://www.gov.uk/expenses-if-youre-self-employed" class="source">GOV.UK</a></td>
+    </tr>
+    <tr>
+      <td>Phone &amp; internet (business proportion)</td>
+      <td><span class="tag tag-green">Yes</span></td>
+      <td class="amount">GBP 300</td>
+      <td><a href="https://www.crunch.co.uk/knowledge/article/working-from-home-what-expenses-claim" class="source">Crunch</a></td>
+    </tr>
+    <tr>
+      <td>Editor / subcontractor (ScrollBuddy content)</td>
+      <td><span class="tag tag-yellow">If sole trader income</span></td>
+      <td class="amount">GBP 3,000</td>
+      <td><a href="https://www.gov.uk/expenses-if-youre-self-employed" class="source">GOV.UK</a></td>
+    </tr>
+    <tr>
+      <td>Equipment (laptop, monitors, keyboards)</td>
+      <td><span class="tag tag-green">Yes (capital allowance)</span></td>
+      <td class="amount">Varies</td>
+      <td><a href="https://www.gov.uk/capital-allowances" class="source">GOV.UK</a></td>
+    </tr>
+    <tr>
+      <td>Accountant / tax software fees</td>
+      <td><span class="tag tag-green">Yes</span></td>
+      <td class="amount">GBP 300</td>
+      <td><a href="https://www.sage.com/en-gb/blog/allowable-expenses-self-assessment-tax-return/" class="source">Sage</a></td>
+    </tr>
+    <tr class="total">
+      <td colspan="2">Total deductible expenses</td>
+      <td class="amount">GBP 6,912</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Living in family home:</strong> Use the <strong>simplified flat rate</strong> (GBP 26/month for 101+ hours).
+  No receipts needed, no proof of bill payments. Works regardless of who pays the household bills.
+  The actual costs method (claiming electricity proportionally) requires you to be paying those bills yourself.
+  <br><a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/working-from-home" class="source">[GOV.UK: Simplified expenses - working from home]</a>
+</div>
+
+<div class="callout">
+  <strong>Editor expense note:</strong> Deductible only if the content work generates income through your sole trader business (not through Aviini Ltd).
+  If ScrollBuddy revenue flows through Aviini Ltd, expense it there instead.
+  <a href="https://www.gov.uk/expenses-if-youre-self-employed" class="source">[GOV.UK: Wholly and exclusively rule]</a>
+</div>
+
+<!-- ==================== TAX ==================== -->
+<h2>3. Tax Calculation (2026/27)</h2>
+
+<div class="card">
+  <table>
+    <tr><td>Gross income</td><td class="amount">GBP 60,669</td></tr>
+    <tr><td>Less allowable expenses</td><td class="amount negative">- GBP 6,912</td></tr>
+    <tr class="total"><td>Taxable profit</td><td class="amount">GBP 53,757</td></tr>
+  </table>
+</div>
+
+<h3>Income Tax</h3>
+<table>
+  <thead><tr><th>Band</th><th>Rate</th><th class="amount">Tax</th></tr></thead>
+  <tbody>
+    <tr><td>GBP 0 - 12,570 (Personal Allowance)</td><td>0%</td><td class="amount">GBP 0</td></tr>
+    <tr><td>GBP 12,571 - 50,270 (Basic rate)</td><td>20%</td><td class="amount">GBP 7,540</td></tr>
+    <tr><td>GBP 50,271 - 53,757 (Higher rate)</td><td>40%</td><td class="amount">GBP 1,395</td></tr>
+    <tr class="total"><td colspan="2">Total Income Tax</td><td class="amount">GBP 8,935</td></tr>
+  </tbody>
+</table>
+<p class="source">Rates: <a href="https://www.gov.uk/income-tax-rates">GOV.UK Income Tax rates 2026/27</a> |
+  <a href="https://www.mah.uk.com/uk-tax-rates-2026-27-guide-sole-traders-directors-high-earner/">MAH UK Tax Rates 2026/27</a></p>
+
+<h3>National Insurance (Class 4)</h3>
+<table>
+  <thead><tr><th>Band</th><th>Rate</th><th class="amount">NI</th></tr></thead>
+  <tbody>
+    <tr><td>GBP 12,570 - 50,270</td><td>6%</td><td class="amount">GBP 2,262</td></tr>
+    <tr><td>GBP 50,270 - 53,757</td><td>2%</td><td class="amount">GBP 70</td></tr>
+    <tr class="total"><td colspan="2">Total Class 4 NI</td><td class="amount">GBP 2,332</td></tr>
+  </tbody>
+</table>
+<p class="source">Rates: <a href="https://www.gov.uk/self-employed-national-insurance-rates">GOV.UK Self-employed NI rates</a> |
+  Class 2 NI abolished from April 2024 (auto-credited for state pension).</p>
+
+<div class="card card-green">
+  <table>
+    <tr class="total"><td>Total tax + NI</td><td class="amount">GBP 11,267</td></tr>
+    <tr class="total"><td>Take home (before pension/ISA)</td><td class="amount highlight">GBP 42,490</td></tr>
+    <tr><td>Monthly take home</td><td class="amount highlight">GBP 3,541</td></tr>
+  </table>
+</div>
+
+<!-- ==================== PENSION ==================== -->
+<h2>4. Pension (SIPP)</h2>
+<p>Personal pension contributions extend your basic rate band, moving income out of 40% tax.
+  <a href="https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief" class="source">[GOV.UK: Pension tax relief]</a>
+</p>
+
+<h3>How tax relief works</h3>
+<div class="card card-blue">
+  <p>For every GBP 100 you want in your pension:</p>
+  <table>
+    <tr><td>You pay (net contribution)</td><td class="amount">GBP 80</td></tr>
+    <tr><td>HMRC adds 20% basic rate relief (automatic)</td><td class="amount highlight">+ GBP 20</td></tr>
+    <tr><td>In your pension pot</td><td class="amount">GBP 100</td></tr>
+    <tr><td>Higher rate relief (via Self Assessment, on amount above GBP 50,270)</td><td class="amount highlight">+ 20% refund</td></tr>
+  </table>
+  <p class="source" style="margin-top:0.75rem">
+    <a href="https://getpenfold.com/pension-guides/self-employed-pension-tax-relief">Penfold: Self-employed pension tax relief</a> |
+    <a href="https://www.hl.co.uk/pensions/sipp/self-employed">HL: SIPP for self-employed</a>
+  </p>
+</div>
+
+<h3>Sweet spot: eliminate all 40% tax</h3>
+<p>GBP 3,487 of your income falls in the 40% band (GBP 50,271 - 53,757).
+  A pension contribution of <strong>GBP 3,500 gross</strong> extends your basic rate band to GBP 53,770, wiping out all higher-rate tax.</p>
+
+<div class="grid">
+  <div class="card">
+    <h3>Option A: Sweet spot (GBP 3,500)</h3>
+    <table>
+      <tr><td>You pay net</td><td class="amount">GBP 2,800</td></tr>
+      <tr><td>HMRC adds (20%)</td><td class="amount">GBP 700</td></tr>
+      <tr><td>Higher rate relief</td><td class="amount highlight">GBP 697</td></tr>
+      <tr><td>In pension pot</td><td class="amount">GBP 3,500</td></tr>
+      <tr class="total"><td>Real cost</td><td class="amount">GBP 2,103</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Option B: Moderate (GBP 5,000)</h3>
+    <table>
+      <tr><td>You pay net</td><td class="amount">GBP 4,000</td></tr>
+      <tr><td>HMRC adds (20%)</td><td class="amount">GBP 1,000</td></tr>
+      <tr><td>Higher rate relief</td><td class="amount highlight">GBP 697</td></tr>
+      <tr><td>In pension pot</td><td class="amount">GBP 5,000</td></tr>
+      <tr class="total"><td>Real cost</td><td class="amount">GBP 3,303</td></tr>
+    </table>
+  </div>
+</div>
+
+<h3>Recommended SIPP providers</h3>
+<table>
+  <thead><tr><th>Provider</th><th>Platform fee</th><th>Best for</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://www.vanguardinvestor.co.uk/investing-explained/what-is-a-sipp">Vanguard</a></td><td>0.15% (capped GBP 375/yr)</td><td>Cheapest for index funds</td></tr>
+    <tr><td><a href="https://www.pensionbee.com/">PensionBee</a></td><td>0.50 - 0.95%</td><td>Simplest app, auto-contributions</td></tr>
+    <tr><td><a href="https://www.hl.co.uk/pensions/sipp">Hargreaves Lansdown</a></td><td>0.45%</td><td>Widest investment choice</td></tr>
+  </tbody>
+</table>
+<p class="source">Annual contribution limit: GBP 60,000 or 100% of earnings.
+  Accessible from age 57 (25% tax-free, rest taxed as income).
+  <a href="https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief">[GOV.UK]</a></p>
+
+<!-- ==================== CAPITAL DEPLOYMENT ==================== -->
+<h2>5. Capital Deployment Strategy</h2>
+<p>Three buckets to maximise returns on income before tax is due. Each bucket has a specific purpose and vehicle.</p>
+
+<div class="grid">
+  <div class="card card-yellow">
+    <h3>Bucket 1: Tax Reserve</h3>
+    <table>
+      <tr><td>Monthly allocation</td><td class="amount warn">GBP 1,600</td></tr>
+      <tr><td>Vehicle</td><td class="amount">High-interest savings account</td></tr>
+      <tr><td>Interest rate (2026)</td><td class="amount">4 - 5%</td></tr>
+      <tr><td>Target by Jan 2028</td><td class="amount warn">GBP 18,000+</td></tr>
+    </table>
+    <p style="margin-top:0.75rem; color: #8b949e;">
+      <strong>NOT in an ISA.</strong> Save your ISA allowance for growth. Interest on savings is covered by the
+      <a href="https://www.gov.uk/apply-tax-free-interest-on-savings">Personal Savings Allowance</a> (GBP 1,000/year tax-free for basic rate taxpayers).
+      Keep in instant-access account: you need this liquid for the January 2028 tax payment.
+    </p>
+  </div>
+  <div class="card card-green">
+    <h3>Bucket 2: Growth (S&amp;S ISA)</h3>
+    <table>
+      <tr><td>Monthly allocation</td><td class="amount highlight">GBP 1,250</td></tr>
+      <tr><td>Vehicle</td><td class="amount">Stocks &amp; Shares ISA</td></tr>
+      <tr><td>Annual ISA allowance</td><td class="amount">GBP 20,000</td></tr>
+      <tr><td>Tax on growth / dividends</td><td class="amount highlight">0%</td></tr>
+      <tr><td>Tax on withdrawals</td><td class="amount highlight">0%</td></tr>
+      <tr><td>Access</td><td class="amount">Anytime (no lock-in)</td></tr>
+    </table>
+    <p style="margin-top:0.75rem; color: #8b949e;">
+      Global index fund (Vanguard FTSE Global All Cap or similar). Father covers downside risk, so go aggressive with equities.
+      Tax-free growth and tax-free withdrawals: ideal for medium-term wealth building (accessible before age 57, unlike pensions).
+    </p>
+    <p class="source"><a href="https://www.gov.uk/individual-savings-accounts">GOV.UK: ISAs</a></p>
+  </div>
+</div>
+
+<div class="card card-blue">
+  <h3>Bucket 3: Pension (SIPP)</h3>
+  <p>See Section 4 above. GBP 500/month into SIPP eliminates 40% tax band. HMRC adds 20% relief at source.</p>
+</div>
+
+<div class="callout">
+  <strong>Why S&amp;S ISA over Cash ISA?</strong> Father covers downside risk on investments, so go aggressive with equities (higher expected returns than cash).
+  Don't waste ISA allowance on the tax reserve: savings account interest is already covered by the Personal Savings Allowance (GBP 1,000/year tax-free).
+  <br><br><strong>ISA tip:</strong> Use any remaining 2025/26 ISA allowance before 5 April 2026. The allowance resets and you lose it.
+  <a href="https://www.gov.uk/individual-savings-accounts" class="source">[GOV.UK: ISAs]</a>
+</div>
+
+<!-- ==================== MONTHLY BUDGET ==================== -->
+<h2>6. Monthly Budget</h2>
+
+<div class="card card-green">
+  <table>
+    <thead><tr><th>Category</th><th></th><th class="amount">Monthly</th></tr></thead>
+    <tbody>
+      <tr><td colspan="2"><strong>Income</strong></td><td class="amount"><strong>GBP 5,056</strong></td></tr>
+      <tr><td colspan="3" style="color:#8b949e; font-size:0.85rem; padding-top:1rem;">Auto-transfers on payday:</td></tr>
+      <tr><td>Tax reserve (high-interest savings)</td><td><span class="tag tag-red">Priority 1</span></td><td class="amount negative">- GBP 1,600</td></tr>
+      <tr><td>Pension (SIPP, GBP 6K/yr net)</td><td><span class="tag tag-blue">Priority 2</span></td><td class="amount negative">- GBP 500</td></tr>
+      <tr><td>ISA (Stocks &amp; Shares)</td><td><span class="tag tag-green">Priority 3</span></td><td class="amount negative">- GBP 1,250</td></tr>
+      <tr><td colspan="3" style="color:#8b949e; font-size:0.85rem; padding-top:1rem;">Business expenses:</td></tr>
+      <tr><td>Editor</td><td></td><td class="amount negative">- GBP 250</td></tr>
+      <tr><td>Subscriptions</td><td></td><td class="amount negative">- GBP 250</td></tr>
+      <tr><td>Home office (simplified)</td><td></td><td class="amount negative">- GBP 26</td></tr>
+      <tr class="total">
+        <td colspan="2">Available for living expenses</td>
+        <td class="amount highlight">GBP 1,180</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== ANNUAL SUMMARY ==================== -->
+<h2>7. Annual Summary</h2>
+
+<div class="card">
+  <table>
+    <tr><td>Gross income</td><td class="amount">GBP 60,669</td></tr>
+    <tr><td>Business expenses</td><td class="amount negative">- GBP 6,912</td></tr>
+    <tr><td>Tax + NI</td><td class="amount negative">- GBP 10,570 <span style="color:#8b949e">(with pension relief)</span></td></tr>
+    <tr><td>Pension contributions (net)</td><td class="amount negative">- GBP 6,000</td></tr>
+    <tr><td>ISA contributions</td><td class="amount negative">- GBP 15,000</td></tr>
+    <tr class="total"><td>Cash for living</td><td class="amount">GBP 22,187 <span style="color:#8b949e">(GBP 1,849/month)</span></td></tr>
+  </table>
+  <br>
+  <h3>Wealth building per year</h3>
+  <table>
+    <tr><td>Pension pot</td><td class="amount highlight">+ GBP 7,500 <span style="color:#8b949e">(GBP 6K net + 20% relief, locked till 57)</span></td></tr>
+    <tr><td>ISA pot</td><td class="amount highlight">+ GBP 15,000 <span style="color:#8b949e">(accessible anytime)</span></td></tr>
+    <tr class="total"><td>Total wealth built</td><td class="amount highlight">+ GBP 22,500/year</td></tr>
+  </table>
+</div>
+
+<!-- ==================== AMEX ==================== -->
+<h2>8. Amex Business Gold</h2>
+<div class="card">
+  <table>
+    <tr><td>Eligible for sole traders?</td><td class="amount highlight">Yes</td></tr>
+    <tr><td>Annual fee</td><td class="amount">Free first year (then GBP 195)</td></tr>
+    <tr><td>Welcome bonus</td><td class="amount">60,000 Membership Rewards points</td></tr>
+    <tr><td>Spend requirement</td><td class="amount">GBP 6,000 in 3 months</td></tr>
+    <tr><td>Points convert to</td><td class="amount">Avios, hotels, statement credit</td></tr>
+  </table>
+  <p style="margin-top:0.75rem; color: #8b949e;">Put business expenses through it for rewards. Apply after UTR arrives.</p>
+  <p class="source"><a href="https://www.headforpoints.com/2026/02/27/60000-points-60000-avios-amex-business-gold/">Head for Points: Amex Business Gold 60K offer</a> |
+    <a href="https://www.americanexpress.com/en-gb/business/apply-for-business-card/">Apply</a></p>
+</div>
+
+<!-- ==================== BANKING ==================== -->
+<h2>9. Banking Infrastructure</h2>
+<p>Three accounts, each with a specific role. All feed into FreeAgent for automated MTD compliance.</p>
+
+<div class="grid">
+  <div class="card card-blue">
+    <h3>Starling Business <span class="tag tag-blue">Main Account</span></h3>
+    <table>
+      <tr><td>Role</td><td>Primary business account. Deel pays here.</td></tr>
+      <tr><td>Cost</td><td class="amount highlight">Free</td></tr>
+      <tr><td>Developer API</td><td class="amount highlight">Yes (personal access tokens, webhooks)</td></tr>
+      <tr><td>Auto-transfers</td><td>SIPP, tax reserve, ISA, GBP 1 to Mettle</td></tr>
+    </table>
+    <p class="source"><a href="https://www.starlingbank.com/business-account/sole-trader/">starlingbank.com</a> |
+      <a href="https://developer.starlingbank.com/">Starling Developer Portal</a></p>
+  </div>
+  <div class="card">
+    <h3>Mettle <span class="tag tag-yellow">FreeAgent Key</span></h3>
+    <table>
+      <tr><td>Role</td><td>Exists ONLY to unlock free FreeAgent (~GBP 150/yr saved)</td></tr>
+      <tr><td>Cost</td><td class="amount highlight">Free (NatWest)</td></tr>
+      <tr><td>Keep alive</td><td>GBP 1/month standing order from Starling</td></tr>
+      <tr><td>Why free FreeAgent?</td><td>NatWest owns both Mettle and FreeAgent</td></tr>
+    </table>
+    <p class="source"><a href="https://www.mettle.co.uk/">mettle.co.uk</a></p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Money Flow</h3>
+  <p style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; color: #8b949e; line-height: 1.8;">
+    Deel (EUR) → <span style="color:#58a6ff">Starling</span> (GBP) → auto-transfers: SIPP, tax reserve, ISA, GBP 1 to Mettle<br>
+    Business expenses → <span style="color:#d29922">Amex Gold</span> (rewards) → paid from <span style="color:#58a6ff">Starling</span><br>
+    <span style="color:#3fb950">FreeAgent</span> pulls from Starling + Mettle + Amex via Open Banking → submits MTD to HMRC
+  </p>
+</div>
+
+<!-- ==================== KEY DATES ==================== -->
+<h2>10. Key Dates</h2>
+<table>
+  <thead><tr><th>Date</th><th>What</th><th class="amount">Amount</th></tr></thead>
+  <tbody>
+    <tr><td>5 Aug 2026</td><td>MTD Q1 report (6 Apr - 5 Jul) — <strong>REPORTING ONLY</strong></td><td class="amount">-</td></tr>
+    <tr><td>5 Nov 2026</td><td>MTD Q2 report (6 Jul - 5 Oct) — <strong>REPORTING ONLY</strong></td><td class="amount">-</td></tr>
+    <tr><td>5 Feb 2027</td><td>MTD Q3 report (6 Oct - 5 Jan) — <strong>REPORTING ONLY</strong></td><td class="amount">-</td></tr>
+    <tr><td>5 Apr 2027</td><td>Tax year 2026/27 ends</td><td class="amount">-</td></tr>
+    <tr><td>5 May 2027</td><td>MTD Q4 report (6 Jan - 5 Apr) — <strong>REPORTING ONLY</strong></td><td class="amount">-</td></tr>
+    <tr><td class="warn">31 Jan 2028</td><td>Self Assessment: full 2026/27 tax + first payment on account for 2027/28</td><td class="amount warn">~ GBP 16,500</td></tr>
+    <tr><td class="warn">31 Jul 2028</td><td>Second payment on account for 2027/28</td><td class="amount warn">~ GBP 5,300</td></tr>
+  </tbody>
+</table>
+<div class="callout">
+  <strong>January 2028: First Year Trap</strong><br>
+  Your first Self Assessment includes the full 2026/27 tax bill (~GBP 11,000)
+  PLUS a 50% "payment on account" towards 2027/28 (~GBP 5,500). That's ~150% of one year's tax in a single payment.
+  <br><br>
+  This is why the GBP 1,600/month tax reserve matters: by January 2028 (22 months), you'll have ~GBP 35,200 saved —
+  enough for both the January payment and the July 2028 second payment on account.
+  <br><br>
+  <strong>What is a "payment on account"?</strong> When your tax bill exceeds GBP 1,000, HMRC requires advance payments
+  towards next year's tax. Each payment is 50% of your previous year's bill. Due 31 January and 31 July.
+  In your first year, you have no prior payments, so the full bill + first advance hit at once.
+  <a href="https://www.gov.uk/understand-self-assessment-bill/payments-on-account" class="source">[GOV.UK: Payments on account]</a>
+</div>
+
+<div class="callout">
+  <strong>MTD quarterly dates above are REPORTING deadlines, not payment deadlines.</strong>
+  You submit income and expense data to HMRC via FreeAgent. No money changes hands.
+  Tax payments follow the existing Self Assessment schedule: 31 January and 31 July.
+  <a href="https://www.gov.uk/guidance/using-making-tax-digital-for-income-tax" class="source">[GOV.UK: MTD for Income Tax]</a>
+</div>
+
+<!-- ==================== MTD ==================== -->
+<h2>11. Making Tax Digital (MTD)</h2>
+<div class="card card-yellow">
+  <p><strong>From April 2026:</strong> Self-employed earning over GBP 50,000 must submit quarterly digital updates to HMRC using MTD-compatible software.</p>
+  <br>
+  <table>
+    <tr><td>Software</td><td><a href="https://www.freeagent.com/">FreeAgent</a> (free via <a href="https://www.mettle.co.uk/">Mettle</a> business account)</td></tr>
+    <tr><td>Quarterly submission deadlines</td><td>5 Aug, 5 Nov, 5 Feb, 5 May (1 month after quarter ends)</td></tr>
+    <tr><td>End of year</td><td>Final declaration replaces traditional Self Assessment</td></tr>
+    <tr><td>Bank feeds</td><td>FreeAgent connects to Starling + Mettle + Amex via Open Banking</td></tr>
+  </table>
+  <p class="source" style="margin-top:0.75rem">
+    <a href="https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax">GOV.UK: MTD for Income Tax</a> |
+    <a href="https://www.gov.uk/government/news/one-year-until-making-tax-digital-for-income-tax-launches">GOV.UK: MTD launch announcement</a>
+  </p>
+</div>
+
+<div class="callout">
+  <strong>MTD quarterly submissions are REPORTING only.</strong> They do NOT change when you pay tax.
+  You send income and expense data to HMRC quarterly via FreeAgent. Tax payments remain on the Self Assessment
+  schedule (31 January / 31 July). These are two completely separate things.
+  <br><br>
+  <strong>Soft landing:</strong> No penalty points for late quarterly submissions in the first year of MTD.
+  <a href="https://www.gov.uk/guidance/using-making-tax-digital-for-income-tax" class="source">[GOV.UK: MTD for Income Tax]</a>
+</div>
+
+<!-- ==================== ACTION PLAN ==================== -->
+<h2>12. Action Plan</h2>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <strong>Register as self-employed with HMRC</strong>
+    <div class="step-when">This week | <a href="https://www.gov.uk/become-sole-trader/register-sole-trader">gov.uk/become-sole-trader</a></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <strong>Open Starling Business sole trader account</strong> (free, main account for Deel payments, developer API)
+    <div class="step-when">This week | <a href="https://www.starlingbank.com/business-account/sole-trader/">starlingbank.com</a></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <strong>Open Mettle account</strong> (free, unlocks free FreeAgent for MTD — saves ~GBP 150/year)
+    <div class="step-when">This week | <a href="https://www.mettle.co.uk/">mettle.co.uk</a></div>
+    <div class="step-when">Set up GBP 1/month standing order from Starling to keep Mettle active</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <strong>Activate FreeAgent via Mettle app</strong> + connect Starling and Mettle bank feeds
+    <div class="step-when">After Mettle opens | <a href="https://www.freeagent.com/">freeagent.com</a></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <strong>Set up tax reserve</strong>: GBP 1,600/month auto-transfer into high-interest savings (NOT ISA)
+    <div class="step-when">When first Deel payment arrives</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">6</div>
+  <div class="step-content">
+    <strong>Open Vanguard SIPP</strong> + set up GBP 500/month standing order (GBP 6K/yr net)
+    <div class="step-when">Within 2 weeks | <a href="https://www.vanguardinvestor.co.uk/investing-explained/what-is-a-sipp">vanguardinvestor.co.uk</a></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">7</div>
+  <div class="step-content">
+    <strong>Open Vanguard Stocks &amp; Shares ISA</strong> + set up GBP 1,250/month standing order
+    <div class="step-when">Within 2 weeks (same Vanguard account)</div>
+    <div class="step-when">Use remaining 2025/26 ISA allowance before 5 April 2026</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">8</div>
+  <div class="step-content">
+    <strong>Apply for Amex Business Gold</strong> (need UTR) + connect to FreeAgent via Open Banking
+    <div class="step-when">When UTR arrives (~2-3 weeks) | <a href="https://www.americanexpress.com/en-gb/business/apply-for-business-card/">americanexpress.com</a></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">9</div>
+  <div class="step-content">
+    <strong>Connect FreeAgent to HMRC for MTD</strong>
+    <div class="step-when">Before first quarter end | <a href="https://www.freeagent.com/making-tax-digital/">freeagent.com/mtd</a></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">10</div>
+  <div class="step-content">
+    <strong>First MTD quarterly report</strong> (REPORTING only, not a payment)
+    <div class="step-when">Submit by 5 August 2026 (covers 6 Apr - 5 Jul)</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">11</div>
+  <div class="step-content">
+    <strong>File Self Assessment + pay tax</strong> (first year trap: ~GBP 16,500)
+    <div class="step-when">31 January 2028</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">12</div>
+  <div class="step-content">
+    <strong>Register on HMRC Developer Hub</strong> + start building custom financial dashboard with Starling API
+    <div class="step-when">Future project | <a href="https://developer.service.hmrc.gov.uk/">developer.service.hmrc.gov.uk</a></div>
+  </div>
+</div>
+
+<!-- ==================== SOURCES ==================== -->
+<hr>
+<h2>Sources</h2>
+<div class="source" style="line-height: 2;">
+  <p><strong>Tax rates &amp; thresholds:</strong></p>
+  <a href="https://www.gov.uk/income-tax-rates">GOV.UK: Income Tax rates and thresholds</a><br>
+  <a href="https://www.gov.uk/self-employed-national-insurance-rates">GOV.UK: Self-employed NI rates</a><br>
+  <a href="https://www.mah.uk.com/uk-tax-rates-2026-27-guide-sole-traders-directors-high-earner/">MAH: UK Tax Rates 2026/27</a><br>
+  <a href="https://www.e-accounts.co.uk/2025/12/30/2026-27-uk-tax-rates-allowances-business-guide/">e-accounts: 2026/27 Tax Rates &amp; Allowances</a><br>
+  <a href="https://taxscape.deloitte.com/taxtables/deloitte-uk-tax-rates-2026-27.pdf">Deloitte: Tax Rates 2026/27 (PDF)</a><br>
+
+  <br><p><strong>Expenses &amp; deductions:</strong></p>
+  <a href="https://www.gov.uk/expenses-if-youre-self-employed">GOV.UK: Expenses if self-employed</a><br>
+  <a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/working-from-home">GOV.UK: Simplified expenses - working from home</a><br>
+  <a href="https://www.crunch.co.uk/knowledge/article/working-from-home-what-expenses-claim">Crunch: Working from home expenses</a><br>
+  <a href="https://www.sage.com/en-gb/blog/allowable-expenses-self-assessment-tax-return/">Sage: Allowable expenses guide</a><br>
+  <a href="https://fslaccountancy.co.uk/home-office-expenses-hmrc-guide-2025-26-tax-relief-rules-rates-uk/">FSL: Home office expenses HMRC guide</a><br>
+
+  <br><p><strong>Pension:</strong></p>
+  <a href="https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief">GOV.UK: Pension tax relief</a><br>
+  <a href="https://www.hl.co.uk/pensions/sipp/self-employed">Hargreaves Lansdown: SIPP for self-employed</a><br>
+  <a href="https://getpenfold.com/pension-guides/self-employed-pension-tax-relief">Penfold: Self-employed pension tax relief</a><br>
+
+  <br><p><strong>Self Assessment &amp; tax payments:</strong></p>
+  <a href="https://www.gov.uk/self-assessment-tax-returns">GOV.UK: Self Assessment tax returns</a><br>
+  <a href="https://www.gov.uk/understand-self-assessment-bill">GOV.UK: Understand your Self Assessment tax bill</a><br>
+  <a href="https://www.gov.uk/understand-self-assessment-bill/payments-on-account">GOV.UK: Payments on account</a><br>
+
+  <br><p><strong>MTD &amp; registration:</strong></p>
+  <a href="https://www.gov.uk/become-sole-trader/register-sole-trader">GOV.UK: Register as sole trader</a><br>
+  <a href="https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax">GOV.UK: MTD for Income Tax eligibility</a><br>
+  <a href="https://www.gov.uk/guidance/using-making-tax-digital-for-income-tax">GOV.UK: Using MTD for Income Tax</a><br>
+
+  <br><p><strong>ISA &amp; savings:</strong></p>
+  <a href="https://www.gov.uk/individual-savings-accounts">GOV.UK: Individual Savings Accounts (ISAs)</a><br>
+  <a href="https://www.gov.uk/apply-tax-free-interest-on-savings">GOV.UK: Personal Savings Allowance</a><br>
+
+  <br><p><strong>Banking:</strong></p>
+  <a href="https://www.starlingbank.com/business-account/sole-trader/">Starling Bank: Sole Trader Account</a><br>
+  <a href="https://developer.starlingbank.com/">Starling Developer Portal (API)</a><br>
+  <a href="https://www.mettle.co.uk/">Mettle by NatWest</a><br>
+  <a href="https://developer.service.hmrc.gov.uk/">HMRC Developer Hub (MTD APIs)</a><br>
+
+  <br><p><strong>Exchange rate:</strong></p>
+  <a href="https://www.exchangerates.org.uk/EUR-GBP-spot-exchange-rates-history-2026.html">EUR-GBP 2026 history</a><br>
+</div>
+
+<hr>
+<p class="source" style="margin-top:1rem; text-align:center;">
+  Generated March 2026. This is a financial plan, not professional tax advice.
+  Consult a qualified accountant for your specific circumstances.
+</p>
+
+</body>
+</html>
